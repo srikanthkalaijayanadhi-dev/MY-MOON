@@ -472,8 +472,8 @@ section {
 .carousel-track {
     display: flex;
     gap: 20px;
-    width: calc(350px * 40); /* Width of all slides (original + cloned) */
-    animation: scroll 100s linear infinite; /* Adjusted for 20 images */
+    width: calc(350px * 32); /* Width of all slides (original + cloned) */
+    animation: scroll 80s linear infinite; /* Adjusted for 16 images */
 }
 
 .carousel-track:hover {
@@ -482,7 +482,7 @@ section {
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-350px * 20)); } /* Scroll half the track */
+    100% { transform: translateX(calc(-350px * 16)); } /* Scroll half the track */
 }
 
 .carousel-slide {
@@ -1015,9 +1015,14 @@ section {
     }
     .large-wish {
         font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
     .wish-section .subtext {
         font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 40px;
+        padding: 0 20px;
     }
     .giant-cake {
         transform: scale(0.55);
@@ -1096,7 +1101,16 @@ section {
         font-size: 2rem;
     }
     .large-wish {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        padding: 0 10px;
+    }
+    .wish-section .subtext {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 30px;
+        padding: 0 15px;
     }
     .password-container {
         width: 90%;
