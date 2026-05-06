@@ -264,10 +264,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 9. INFINITE CAROUSEL CLONING ---
+    // --- 9. INFINITE CAROUSEL CLONING & SHUFFLING ---
     const carouselTrack = document.getElementById('carousel-track');
     if (carouselTrack) {
-        const slides = Array.from(carouselTrack.children);
+        let slides = Array.from(carouselTrack.children);
+        
+        // Keep the first image fixed as requested, shuffle the rest
+        if (slides.length > 1) {
+            const firstSlide = slides.shift();
+            
+            // Shuffle remaining slides (Fisher-Yates)
+            for (let i = slides.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [slides[i], slides[j]] = [slides[j], slides[i]];
+            }
+            
+            slides.unshift(firstSlide);
+        }
+        
+        // Re-append to track in shuffled order
+        slides.forEach(slide => carouselTrack.appendChild(slide));
+        
         // Clone all slides and append them to the track to create the infinite loop effect
         slides.forEach(slide => {
             const clone = slide.cloneNode(true);
