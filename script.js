@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainContent.classList.remove('hidden');
                 // Trigger any animations that need to start after load
                 initAnimations();
+                
+                // Play music automatically after user interaction
+                if (!isPlaying) {
+                    bgMusic.play().catch(e => console.log("Audio play failed:", e));
+                    musicIcon.textContent = '🎶';
+                    musicIcon.classList.add('music-playing');
+                    isPlaying = true;
+                }
             }, 1000);
         } else {
             // Failure
@@ -307,6 +315,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 startAutoSlide();
             }
         });
+
+        if (carouselTrack) {
+            carouselTrack.addEventListener('click', (e) => {
+                const slide = e.target.closest('.carousel-slide');
+                if (slide) {
+                    const allImgElements = document.querySelectorAll('#carousel-track .carousel-slide img');
+                    const uniqueImages = Array.from(allImgElements).slice(0, allImgElements.length / 2);
+                    slideshowImages = uniqueImages.map(img => img.src);
+                    
+                    const allSlides = Array.from(carouselTrack.children);
+                    const clickedIndex = allSlides.indexOf(slide);
+                    
+                    if (slideshowImages.length > 0) {
+                        currentSlideIndex = clickedIndex % uniqueImages.length;
+                        updateSlideshowImage();
+                        slideshowModal.classList.remove('hidden');
+                        startAutoSlide();
+                    }
+                }
+            });
+        }
 
         closeSlideshowBtn.addEventListener('click', () => {
             slideshowModal.classList.add('hidden');

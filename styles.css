@@ -472,8 +472,8 @@ section {
 .carousel-track {
     display: flex;
     gap: 20px;
-    width: calc(350px * 26); /* Width of all slides (original + cloned) */
-    animation: scroll 65s linear infinite; /* Adjusted for 13 images */
+    width: calc(350px * 40); /* Width of all slides (original + cloned) */
+    animation: scroll 100s linear infinite; /* Adjusted for 20 images */
 }
 
 .carousel-track:hover {
@@ -482,7 +482,7 @@ section {
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-350px * 13)); } /* Scroll half the track */
+    100% { transform: translateX(calc(-350px * 20)); } /* Scroll half the track */
 }
 
 .carousel-slide {
@@ -501,6 +501,7 @@ section {
     transition: transform 0.3s ease;
     border: 5px solid white;
     background: white;
+    cursor: pointer;
 }
 
 .carousel-slide:nth-child(even) .photo-wrapper {
@@ -1006,8 +1007,22 @@ section {
     .hero-section h1 {
         font-size: 3rem;
     }
+    .hero-section .subtext {
+        font-size: 1.2rem;
+    }
+    .memory-title {
+        font-size: 2.5rem;
+    }
     .large-wish {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+    .wish-section .subtext {
+        font-size: 1.2rem;
+    }
+    .giant-cake {
+        transform: scale(0.55);
+        transform-origin: center top;
+        margin-bottom: -300px;
     }
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -1029,7 +1044,7 @@ section {
         padding: 30px;
     }
     #typewriter-text {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .memory-actions {
@@ -1066,5 +1081,28 @@ section {
     
     #next-slide {
         right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .giant-cake {
+        transform: scale(0.45);
+        margin-bottom: -350px;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .memory-title {
+        font-size: 2rem;
+    }
+    .large-wish {
+        font-size: 2.5rem;
+    }
+    .password-container {
+        width: 90%;
+        padding: 20px;
+    }
+    input[type="password"] {
+        width: 150px;
     }
 }
