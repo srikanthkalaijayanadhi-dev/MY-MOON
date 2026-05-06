@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love 🌙</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Particle Container -->
+    <div id="particles"></div>
+
+    <!-- Optional Music Button -->
+    <button id="musicToggle" class="music-btn" aria-label="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <!-- Audio element (Using a placeholder free romantic piano track) -->
+        <!-- PLACEHOLDER AUDIO - Replace src with your preferred music URL -->
+        <audio id="bgMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-piano-126.mp3" type="audio/mpeg">
+        </audio>
+    </button>
+
+    <!-- PRELOADER CAKE ANIMATION -->
+    <div id="preloader-cake" class="active">
+        <div class="preloader-content">
+            <h1 class="preloader-text">A special surprise is baking...</h1>
+            <div class="preloader-cake-container">
+                <div class="cake">
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASSWORD SCREEN -->
+    <div id="password-screen" class="active">
+        <div class="password-container">
+            <div class="lock-icon">🔒</div>
+            <h2>Enter our secret word...</h2>
+            <div class="input-wrapper">
+                <input type="password" id="secretWord" placeholder="Password" autocomplete="off">
+                <button id="submitBtn">Enter</button>
+            </div>
+            <p id="errorMsg" class="error-msg">Try again, my love 💫</p>
+        </div>
+    </div>
+
+    <!-- MAIN SITE CONTENT (Hidden until unlocked) -->
+    <main id="main-content" class="hidden">
+        
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-section fade-in-section">
+            <div class="hero-content">
+                <h1 class="glowing-text">Happy Birthday, My Love 🌙</h1>
+                <p class="subtext">Every moment with you is my favorite memory</p>
+                <div class="heart-pulse">❤️</div>
+            </div>
+            <div class="scroll-indicator">
+                <span>↓</span>
+            </div>
+        </section>
+
+        <!-- 2. COUNTDOWN SECTION -->
+        <section id="countdown" class="countdown-section fade-in-section">
+            <h2>You've been making my world beautiful for...</h2>
+            <div class="counter-container">
+                <div class="counter-card">
+                    <span id="count-years">0</span>
+                    <label>Years</label>
+                </div>
+                <div class="counter-card">
+                    <span id="count-months">0</span>
+                    <label>Months</label>
+                </div>
+                <div class="counter-card">
+                    <span id="count-days">0</span>
+                    <label>Days</label>
+                </div>
+            </div>
+            <!-- START DATE (Format: YYYY-MM-DD) -->
+            <div id="date-data" data-start-date="2025-11-06" style="display:none;"></div>
+        </section>
+
+        <!-- 3. OUR MEMORY LANE (INFINITY CAROUSEL) -->
+        <section id="gallery" class="memory-lane-section fade-in-section">
+            <h2 class="memory-title">Our Memory Lane</h2>
+            
+            <div class="memory-message">
+                <p>A journey through the most incredible moments we've shared together. Hover over each photo to see why these memories mean so much to me! ✨ 💖</p>
+            </div>
+
+            <button id="start-slideshow-btn" class="pink-btn slideshow-btn">
+                <span>▶ Start Slideshow</span>
+            </button>
+
+            <!-- INFINITY CAROUSEL -->
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Photo 1 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077691/file_000000000f387208bcddcb61042792bb_n0m5el.png" alt="Memory 1">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">🌸</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077690/file_000000002ad47208b77227b45daa8a3f_m0nhcv.png" alt="Memory 2">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">🍕</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077689/file_00000000caac71fa82729d0253ecd668_nbht6v.png" alt="Memory 3">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">✨</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Photo 4 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077687/file_000000007324720994084a88432b303f_negzc6.png" alt="Memory 4">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">💖</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Photo 5 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077686/file_00000000660871fa9732a406a15508e0_wirli4.png" alt="Memory 5">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">📸</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Photo 6 -->
+                    <div class="carousel-slide">
+                        <div class="photo-wrapper">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077686/file_00000000525c71fd86f360b7e93922fc_msergv.png" alt="Memory 6">
+                            <div class="photo-overlay">
+                                <span class="overlay-icon">🥰</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-thumb"></div>
+                </div>
+            </div>
+
+            <div class="memory-actions">
+                <button class="blue-btn">← Back to Welcome</button>
+                <button class="pink-btn gradient-btn">✨ Next Surprise! ✨</button>
+            </div>
+        </section>
+
+        <!-- 4. LOVE LETTER SECTION -->
+        <section id="letter" class="letter-section fade-in-section">
+            <div class="parchment-card">
+                <div class="typewriter-container">
+                    <p id="typewriter-text"></p>
+                </div>
+                <p class="signature">Forever Yours ❤️</p>
+            </div>
+        </section>
+
+        <!-- 5. REASONS I LOVE YOU -->
+        <section id="reasons" class="reasons-section fade-in-section">
+            <h2 class="glowing-text">A Few Reasons I Love You 💕</h2>
+            <div class="reasons-grid">
+                <!-- Cards (Easy to edit placeholder text) -->
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">✨</span>
+                        </div>
+                        <div class="card-back">
+                            <p>You make ordinary days feel like magic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">😊</span>
+                        </div>
+                        <div class="card-back">
+                            <p>Your beautiful smile brightens my world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">🥺</span>
+                        </div>
+                        <div class="card-back">
+                            <p>How kind and caring you are to everyone.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">😂</span>
+                        </div>
+                        <div class="card-back">
+                            <p>Your sense of humor perfectly matches mine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">🌟</span>
+                        </div>
+                        <div class="card-back">
+                            <p>You inspire me to be a better person.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="emoji">🏡</span>
+                        </div>
+                        <div class="card-back">
+                            <p>With you, I've found my true home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WISH SECTION (FOOTER) -->
+        <section id="wish" class="wish-section fade-in-section">
+            <div class="wish-content">
+                <h1 class="glowing-text large-wish">Happy Birthday! 🎂🎉</h1>
+                <p class="subtext">May this year bring you all the love, joy, and magic you deserve</p>
+                <div class="cake-container">
+                    <div class="giant-cake">
+                        <!-- TIER 1 -->
+                        <div class="tier1-bottom tier-ellipse"></div>
+                        <div class="tier1-side tier-rect"></div>
+                        <div class="tier1-top tier-ellipse"></div>
+                        
+                        <!-- TIER 2 -->
+                        <div class="tier2-bottom tier-ellipse"></div>
+                        <div class="tier2-side tier-rect"></div>
+                        <div class="tier2-top tier-ellipse"></div>
+                        
+                        <!-- TIER 3 -->
+                        <div class="tier3-bottom tier-ellipse"></div>
+                        <div class="tier3-side tier-rect"></div>
+                        <div class="tier3-top tier-ellipse">
+                            <div class="cake-inscription">
+                                <span class="cake-text">Happy Birthday My Moon 🌕 Gayathri.</span>
+                                <span class="cake-date">01:05:2026</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CANDLE -->
+                        <div class="interactive-candle" id="magic-candle" title="Click to light me!">
+                            <div class="candle-stick"></div>
+                            <div class="candle-flame" id="magic-flame"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FULLSCREEN SLIDESHOW MODAL -->
+        <div id="slideshow-modal" class="hidden">
+            <button id="close-slideshow" class="slideshow-control close-btn">✖</button>
+            <button id="download-slide" class="slideshow-control download-btn" title="Download Image">⬇</button>
+            <button id="prev-slide" class="slideshow-control nav-btn">❮</button>
+            <div class="slideshow-content">
+                <img id="slideshow-image" src="" alt="Slideshow Image">
+            </div>
+            <button id="next-slide" class="slideshow-control nav-btn">❯</button>
+        </div>
+
+    </main>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
