@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const secretWordInput = document.getElementById('secretWord');
     const submitBtn = document.getElementById('submitBtn');
     const errorMsg = document.getElementById('errorMsg');
-    const CORRECT_PASSWORD = "MOON";
+    const CORRECT_PASSWORD = "I LOVE U";
 
     function checkPassword() {
         const value = secretWordInput.value.trim().toUpperCase();
@@ -430,6 +430,63 @@ document.addEventListener('DOMContentLoaded', () => {
     if (magicCandle && magicFlame) {
         magicCandle.addEventListener('click', () => {
             magicFlame.classList.toggle('lit');
+        });
+    }
+
+    // --- 12. SURPRISE GIFT BOX ---
+    const nextSurpriseBtn = document.getElementById('next-surprise-btn');
+    const surpriseSection = document.getElementById('surprise');
+    const magicGiftBox = document.getElementById('magic-gift-box');
+
+    if (nextSurpriseBtn && surpriseSection) {
+        nextSurpriseBtn.addEventListener('click', () => {
+            surpriseSection.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                if (magicGiftBox && !magicGiftBox.classList.contains('open')) {
+                    magicGiftBox.classList.add('shake');
+                }
+            }, 800);
+        });
+    }
+
+    if (magicGiftBox) {
+        magicGiftBox.addEventListener('click', () => {
+            if (!magicGiftBox.classList.contains('open')) {
+                magicGiftBox.classList.remove('shake');
+                magicGiftBox.classList.add('open');
+                
+                // Mini confetti burst
+                const colors = ['#ff69b4', '#ffd700', '#ff1493', '#fff'];
+                for (let i = 0; i < 30; i++) {
+                    const conf = document.createElement('div');
+                    conf.style.position = 'absolute';
+                    conf.style.width = '8px';
+                    conf.style.height = '8px';
+                    conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    conf.style.left = `50%`;
+                    conf.style.top = `50%`;
+                    conf.style.zIndex = `20`;
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 150 + 50;
+                    const tx = Math.cos(angle) * velocity;
+                    const ty = Math.sin(angle) * velocity - 100;
+                    
+                    conf.style.transition = 'all 1s cubic-bezier(0.1, 0.8, 0.3, 1)';
+                    conf.style.opacity = '1';
+                    conf.style.transform = `translate(-50%, -50%)`;
+                    
+                    magicGiftBox.appendChild(conf);
+                    
+                    // Trigger reflow for transition
+                    void conf.offsetWidth;
+                    
+                    conf.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) rotate(${Math.random() * 360}deg)`;
+                    conf.style.opacity = '0';
+                    
+                    setTimeout(() => conf.remove(), 1000);
+                }
+            }
         });
     }
 

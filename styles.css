@@ -135,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     transform: scale(1.5);
+    margin-top: 120px;
 }
 
 /* --- PASSWORD SCREEN --- */
@@ -580,6 +581,177 @@ section {
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+}
+/* --- 3.5. SURPRISE GIFT BOX --- */
+.surprise-section {
+    background: linear-gradient(to bottom, transparent, rgba(255, 105, 180, 0.05), transparent);
+    overflow: hidden;
+}
+
+.gift-box-container {
+    position: relative;
+    margin-top: 50px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.gift-box.shake {
+    animation: shakeBox 0.5s ease-in-out infinite;
+}
+
+@keyframes shakeBox {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.gift-box-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+.gift-box-lid {
+    position: absolute;
+    top: 15px;
+    left: -5px;
+    width: 160px;
+    height: 35px;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2), inset 0 0 10px rgba(0,0,0,0.1);
+    z-index: 2;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    transform-origin: bottom right;
+}
+
+.gift-box.open .gift-box-lid {
+    transform: rotate(110deg) translate(30px, -50px);
+    opacity: 0.8;
+}
+
+.gift-ribbon-horizontal, .gift-ribbon-vertical {
+    position: absolute;
+    background: #ffd700;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.gift-box-body .gift-ribbon-vertical {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+}
+
+.gift-box-lid .gift-ribbon-vertical {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+}
+
+.gift-box-lid .gift-ribbon-horizontal {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 20px;
+}
+
+.gift-bow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 30px;
+    background: #ffd700;
+    clip-path: polygon(50% 50%, 0 0, 0 100%, 50% 50%, 100% 0, 100% 100%);
+}
+
+.coupons-container {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+    transition: all 1s ease;
+}
+
+.gift-box.open ~ .coupons-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-200px);
+}
+
+.coupon-card {
+    background: var(--glass-bg);
+    border: 2px dashed var(--accent-pink);
+    padding: 15px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+    text-align: center;
+    width: 300px;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
+}
+
+.gift-box.open ~ .coupons-container .coupon-card:nth-child(1) { transition-delay: 0.2s; transform: scale(1) rotate(-5deg) translateX(-40px); opacity: 1; }
+.gift-box.open ~ .coupons-container .coupon-card:nth-child(2) { transition-delay: 0.4s; transform: scale(1) rotate(0deg) translateY(-20px); opacity: 1; z-index: 2; }
+.gift-box.open ~ .coupons-container .coupon-card:nth-child(3) { transition-delay: 0.6s; transform: scale(1) rotate(5deg) translateX(40px); opacity: 1; }
+
+.coupon-card:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10 !important;
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.4);
+    border-style: solid;
+}
+
+.coupon-header {
+    font-family: var(--font-heading);
+    color: var(--accent-pink);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.coupon-body {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.coupon-footer {
+    font-size: 0.8rem;
+    color: #a0527b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* --- 4. LOVE LETTER --- */

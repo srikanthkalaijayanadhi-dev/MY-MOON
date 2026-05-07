@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <!-- Main Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Particle Container -->
@@ -21,7 +25,9 @@
         <span class="music-icon">🎵</span>
         <!-- Audio element -->
         <audio id="bgMusic" loop>
-            <source src="https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778085546/ytdown-youtube-the-metro-proposal-media-gttjnsenwdg-009-128k_1OnRlng6_pwyecn.mp3" type="audio/mpeg">
+            <source
+                src="https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778085546/ytdown-youtube-the-metro-proposal-media-gttjnsenwdg-009-128k_1OnRlng6_pwyecn.mp3"
+                type="audio/mpeg">
         </audio>
     </button>
 
@@ -44,6 +50,13 @@
         <div class="password-container">
             <div class="lock-icon">🔒</div>
             <h2>Enter our secret word...</h2>
+            <p class="password-hint" style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 25px; font-style: italic; line-height: 1.5;">
+                HINT:<br>
+                Nee enkitta adhigama sonnadhu…<br>
+                naanum unkitta adhigama solladhadhu…<br>
+                naan unkitte sollanum nu nenacha andha vaarthai…<br>
+                kadaisi varaikum sollama poiduchu 😌
+            </p>
             <div class="input-wrapper">
                 <input type="password" id="secretWord" placeholder="Password" autocomplete="off">
                 <button id="submitBtn">Enter</button>
@@ -54,12 +67,12 @@
 
     <!-- MAIN SITE CONTENT (Hidden until unlocked) -->
     <main id="main-content" class="hidden">
-        
+
         <!-- 1. HERO SECTION -->
         <section id="hero" class="hero-section fade-in-section">
             <div class="hero-content">
                 <h1 class="glowing-text">Happy Birthday, My Love 🌙</h1>
-                <p class="subtext">Every moment with you is my favorite memory</p>
+                <p class="subtext"><b>Un kooda spend panna ovvoru moment um en favourite memory dhaan 😌❤️</b></p>
                 <div class="heart-pulse">❤️</div>
             </div>
             <div class="scroll-indicator">
@@ -69,7 +82,7 @@
 
         <!-- 2. COUNTDOWN SECTION -->
         <section id="countdown" class="countdown-section fade-in-section">
-            <h2>You've been making my world beautiful for...</h2>
+            <h2>Nee en life ah ivlo azhaga maathita…</h2>
             <div class="counter-container">
                 <div class="counter-card">
                     <span id="count-years">0</span>
@@ -91,9 +104,10 @@
         <!-- 3. OUR MEMORY LANE (INFINITY CAROUSEL) -->
         <section id="gallery" class="memory-lane-section fade-in-section">
             <h2 class="memory-title">Our Memory Lane</h2>
-            
+
             <div class="memory-message">
-                <p>A journey through the most incredible moments we've shared together. Hover over each photo to see why these memories mean so much to me! ✨ 💖</p>
+                <p>Namma memory lane ✨💖<br>
+                    Real moments illa naalum… un kooda irundha maari feel aagi create panna memories idhu 😌❤️</p>
             </div>
 
             <button id="start-slideshow-btn" class="pink-btn slideshow-btn">
@@ -106,7 +120,8 @@
                     <!-- Photo 1 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778053775/ChatGPT_Image_May_6_2026_01_20_36_PM_jkbkzy.png" alt="Memory 1">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778053775/ChatGPT_Image_May_6_2026_01_20_36_PM_jkbkzy.png"
+                                alt="Memory 1">
                             <div class="photo-overlay"><span class="overlay-icon">🌸</span></div>
                         </div>
                     </div>
@@ -114,7 +129,8 @@
                     <!-- Photo 4 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077689/file_00000000caac71fa82729d0253ecd668_nbht6v.png" alt="Memory 4">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077689/file_00000000caac71fa82729d0253ecd668_nbht6v.png"
+                                alt="Memory 4">
                             <div class="photo-overlay"><span class="overlay-icon">💖</span></div>
                         </div>
                     </div>
@@ -122,7 +138,8 @@
                     <!-- Photo 6 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077686/file_00000000660871fa9732a406a15508e0_wirli4.png" alt="Memory 6">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778077686/file_00000000660871fa9732a406a15508e0_wirli4.png"
+                                alt="Memory 6">
                             <div class="photo-overlay"><span class="overlay-icon">🥰</span></div>
                         </div>
                     </div>
@@ -130,97 +147,110 @@
                     <!-- Photo 8 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055676/ChatGPT_Image_May_6_2026_01_39_49_PM_ctbxnj.png" alt="Memory 8">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055676/ChatGPT_Image_May_6_2026_01_39_49_PM_ctbxnj.png"
+                                alt="Memory 8">
                             <div class="photo-overlay"><span class="overlay-icon">🌙</span></div>
                         </div>
                     </div>
                     <!-- Photo 9 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055675/ChatGPT_Image_May_6_2026_01_39_54_PM_zs8eth.png" alt="Memory 9">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055675/ChatGPT_Image_May_6_2026_01_39_54_PM_zs8eth.png"
+                                alt="Memory 9">
                             <div class="photo-overlay"><span class="overlay-icon">🎉</span></div>
                         </div>
                     </div>
                     <!-- Photo 10 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055674/ChatGPT_Image_May_6_2026_01_39_57_PM_og6lor.png" alt="Memory 10">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055674/ChatGPT_Image_May_6_2026_01_39_57_PM_og6lor.png"
+                                alt="Memory 10">
                             <div class="photo-overlay"><span class="overlay-icon">💫</span></div>
                         </div>
                     </div>
                     <!-- Photo 11 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055673/ChatGPT_Image_May_6_2026_01_39_59_PM_n9ztgf.png" alt="Memory 11">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778055673/ChatGPT_Image_May_6_2026_01_39_59_PM_n9ztgf.png"
+                                alt="Memory 11">
                             <div class="photo-overlay"><span class="overlay-icon">❤️</span></div>
                         </div>
                     </div>
                     <!-- Photo 12 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041757/ChatGPT_Image_May_6_2026_09_50_50_AM_k0hl9o.png" alt="Memory 12">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041757/ChatGPT_Image_May_6_2026_09_50_50_AM_k0hl9o.png"
+                                alt="Memory 12">
                             <div class="photo-overlay"><span class="overlay-icon">💍</span></div>
                         </div>
                     </div>
                     <!-- Photo 13 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_09_50_44_AM_fylwhr.png" alt="Memory 13">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_09_50_44_AM_fylwhr.png"
+                                alt="Memory 13">
                             <div class="photo-overlay"><span class="overlay-icon">🥂</span></div>
                         </div>
                     </div>
                     <!-- Photo 14 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041757/ChatGPT_Image_May_6_2026_09_50_32_AM_vo9bpp.png" alt="Memory 14">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041757/ChatGPT_Image_May_6_2026_09_50_32_AM_vo9bpp.png"
+                                alt="Memory 14">
                             <div class="photo-overlay"><span class="overlay-icon">🌸</span></div>
                         </div>
                     </div>
                     <!-- Photo 15 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_03_AM_qziwjv.png" alt="Memory 15">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_03_AM_qziwjv.png"
+                                alt="Memory 15">
                             <div class="photo-overlay"><span class="overlay-icon">🍕</span></div>
                         </div>
                     </div>
                     <!-- Photo 16 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_00_AM_gyjiwy.png" alt="Memory 16">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_00_AM_gyjiwy.png"
+                                alt="Memory 16">
                             <div class="photo-overlay"><span class="overlay-icon">✨</span></div>
                         </div>
                     </div>
                     <!-- Photo 17 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_07_AM_vkvg9y.png" alt="Memory 17">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_07_AM_vkvg9y.png"
+                                alt="Memory 17">
                             <div class="photo-overlay"><span class="overlay-icon">💖</span></div>
                         </div>
                     </div>
                     <!-- Photo 18 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_22_AM_trw3hr.png" alt="Memory 18">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_22_AM_trw3hr.png"
+                                alt="Memory 18">
                             <div class="photo-overlay"><span class="overlay-icon">📸</span></div>
                         </div>
                     </div>
                     <!-- Photo 19 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_09_AM_a4daib.png" alt="Memory 19">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778041756/ChatGPT_Image_May_6_2026_10_00_09_AM_a4daib.png"
+                                alt="Memory 19">
                             <div class="photo-overlay"><span class="overlay-icon">🥰</span></div>
                         </div>
                     </div>
                     <!-- Photo 20 -->
                     <div class="carousel-slide">
                         <div class="photo-wrapper">
-                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778086231/ChatGPT_Image_May_6_2026_10_22_30_PM_ctym7y.png" alt="Memory 20">
+                            <img src="https://res.cloudinary.com/dtbm1sjoo/image/upload/v1778086231/ChatGPT_Image_May_6_2026_10_22_30_PM_ctym7y.png"
+                                alt="Memory 20">
                             <div class="photo-overlay"><span class="overlay-icon">🌟</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="progress-bar-container">
                 <div class="progress-bar">
                     <div class="progress-thumb"></div>
@@ -229,7 +259,45 @@
 
             <div class="memory-actions">
                 <button class="blue-btn">← Back to Welcome</button>
-                <button class="pink-btn gradient-btn">✨ Next Surprise! ✨</button>
+                <button id="next-surprise-btn" class="pink-btn gradient-btn">✨ Next Surprise! ✨</button>
+            </div>
+        </section>
+
+        <!-- 3.5. SURPRISE GIFT BOX SECTION -->
+        <section id="surprise" class="surprise-section fade-in-section">
+            <h2 class="glowing-text">🎁 Konjam Special Surprise Unakkaga</h2>
+            <p class="subtext">Gift box ah tap pannu 👀💖</p>
+
+            <div class="gift-box-container">
+                <div class="gift-box" id="magic-gift-box">
+                    <div class="gift-box-lid">
+                        <div class="gift-ribbon-horizontal"></div>
+                        <div class="gift-ribbon-vertical"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-box-body">
+                        <div class="gift-ribbon-vertical"></div>
+                    </div>
+                </div>
+
+                <!-- Hidden Coupons -->
+                <div class="coupons-container" id="coupons-container">
+                    <div class="coupon-card">
+                        <div class="coupon-header">🎟️ LOVE COUPON 🎟️</div>
+                        <div class="coupon-body">🍷 Romantic Dinner Date</div>
+                        <div class="coupon-footer">Un kooda peaceful ah spend panna oru cute dinner night 😌</div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-header">🍿 Movie Night</div>
+                        <div class="coupon-body">Movie nee choose pannu… naan snacks ready panren 😄❤️</div>
+                        <div class="coupon-footer"></div>
+                    </div>
+                    <div class="coupon-card">
+                        <div class="coupon-header">🤗 Unlimited Hugs Session</div>
+                        <div class="coupon-body">Expiry illa… whenever you need 🫂💖</div>
+                        <div class="coupon-footer"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -314,20 +382,20 @@
         <!-- 6. WISH SECTION (FOOTER) -->
         <section id="wish" class="wish-section fade-in-section">
             <div class="wish-content">
-                <h1 class="glowing-text large-wish">Happy Birthday! 🎂🎉</h1>
-                <p class="subtext">May this year bring you all the love, joy, and magic you deserve</p>
+                <h1 class="glowing-text large-wish">Happy Birthday 🎂🎉</h1>
+                <p class="subtext">Indha year unakku neraya happiness, love, peace, and nee deserve panra ella magical moments um kondu varanum ✨💖</p>
                 <div class="cake-container">
                     <div class="giant-cake">
                         <!-- TIER 1 -->
                         <div class="tier1-bottom tier-ellipse"></div>
                         <div class="tier1-side tier-rect"></div>
                         <div class="tier1-top tier-ellipse"></div>
-                        
+
                         <!-- TIER 2 -->
                         <div class="tier2-bottom tier-ellipse"></div>
                         <div class="tier2-side tier-rect"></div>
                         <div class="tier2-top tier-ellipse"></div>
-                        
+
                         <!-- TIER 3 -->
                         <div class="tier3-bottom tier-ellipse"></div>
                         <div class="tier3-side tier-rect"></div>
@@ -337,7 +405,7 @@
                                 <span class="cake-date">01:05:2026</span>
                             </div>
                         </div>
-                        
+
                         <!-- CANDLE -->
                         <div class="interactive-candle" id="magic-candle" title="Click to light me!">
                             <div class="candle-stick"></div>
@@ -364,4 +432,5 @@
     <!-- Main Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
