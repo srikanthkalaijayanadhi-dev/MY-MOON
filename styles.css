@@ -816,7 +816,7 @@ section {
 .reason-card {
     background-color: transparent;
     width: 100%;
-    height: 200px;
+    height: 450px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -855,12 +855,13 @@ section {
     transform: rotateY(180deg);
     background: #fff0f5;
     box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+    overflow-y: auto;
 }
 .card-back p {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     font-family: var(--font-heading);
     color: var(--accent-pink);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* --- 6. WISH SECTION --- */
