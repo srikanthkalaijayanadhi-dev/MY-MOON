@@ -141,6 +141,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicIcon = musicBtn.querySelector('.music-icon');
     let isPlaying = false;
 
+    const SONGS = [
+        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778823933/AQO1pyuBHMQPD1Na-2Uc_uEeH0nzvXbMKlP5UxOHyMzThnUmmMZOzC-nkCpDruJWq7H4aAhfYIkfgwHcHiHeo9y16Z9QSQt-CqPeCxA_h0ofxq.mp3",
+        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824307/vidssave.com_The_Love_Bug_Has_Bitten_Background_Score_256kbps_om228u.webm",
+        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824315/vidssave.com_Ennodu_nee_irundhaal_bgm___I_movie_BGM___feel_the_BGM___ringsound2462_256KBPS_vp5c8r.webm",
+        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824803/vidssave.com_Annul_Maelae_Instrumental_256kbps_xvu8fk.webm",
+        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778085546/ytdown-youtube-the-metro-proposal-media-gttjnsenwdg-009-128k_1OnRlng6_pwyecn.mp3"
+    ];
+
+    // Select a random song for this session
+    bgMusic.src = SONGS[Math.floor(Math.random() * SONGS.length)];
+    bgMusic.load();
+
     // Set lower volume for romantic bg music
     bgMusic.volume = 0.3;
 
