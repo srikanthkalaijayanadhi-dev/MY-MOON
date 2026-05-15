@@ -135,45 +135,77 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
     updateCountdown();
 
-    // --- 4. MUSIC TOGGLE ---
+    // --- 4. MUSIC CONTROLS ---
     const musicBtn = document.getElementById('musicToggle');
+    const prevSongBtn = document.getElementById('prevSongBtn');
+    const nextSongBtn = document.getElementById('nextSongBtn');
     const bgMusic = document.getElementById('bgMusic');
     const musicIcon = musicBtn.querySelector('.music-icon');
     let isPlaying = false;
+    let currentSongIndex = 0;
 
     const SONGS = [
         "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778823933/AQO1pyuBHMQPD1Na-2Uc_uEeH0nzvXbMKlP5UxOHyMzThnUmmMZOzC-nkCpDruJWq7H4aAhfYIkfgwHcHiHeo9y16Z9QSQt-CqPeCxA_h0ofxq.mp3",
         "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824307/vidssave.com_The_Love_Bug_Has_Bitten_Background_Score_256kbps_om228u.webm",
-        "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824315/vidssave.com_Ennodu_nee_irundhaal_bgm___I_movie_BGM___feel_the_BGM___ringsound2462_256KBPS_vp5c8r.webm",
         "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778824803/vidssave.com_Annul_Maelae_Instrumental_256kbps_xvu8fk.webm",
         "https://res.cloudinary.com/dtbm1sjoo/video/upload/v1778085546/ytdown-youtube-the-metro-proposal-media-gttjnsenwdg-009-128k_1OnRlng6_pwyecn.mp3"
     ];
 
-    // Select a random song for this session
-    bgMusic.src = SONGS[Math.floor(Math.random() * SONGS.length)];
+    // Select a random song for this session initially
+    currentSongIndex = Math.floor(Math.random() * SONGS.length);
+    bgMusic.src = SONGS[currentSongIndex];
     bgMusic.load();
 
     // Set lower volume for romantic bg music
     bgMusic.volume = 0.3;
 
+    function playMusic() {
+        bgMusic.play().catch(e => console.log("Audio play failed:", e));
+        musicIcon.textContent = '🎶';
+        musicIcon.classList.add('music-playing');
+        isPlaying = true;
+    }
+
+    function pauseMusic() {
+        bgMusic.pause();
+        musicIcon.textContent = '🎵';
+        musicIcon.classList.remove('music-playing');
+        isPlaying = false;
+    }
+
     musicBtn.addEventListener('click', () => {
         if (isPlaying) {
-            bgMusic.pause();
-            musicIcon.textContent = '🎵';
-            musicIcon.classList.remove('music-playing');
+            pauseMusic();
         } else {
-            bgMusic.play().catch(e => console.log("Audio play failed:", e));
-            musicIcon.textContent = '🎶';
-            musicIcon.classList.add('music-playing');
+            playMusic();
         }
-        isPlaying = !isPlaying;
     });
+
+    function changeSong(direction) {
+        if (direction === 'next') {
+            currentSongIndex = (currentSongIndex + 1) % SONGS.length;
+        } else {
+            currentSongIndex = (currentSongIndex - 1 + SONGS.length) % SONGS.length;
+        }
+        bgMusic.src = SONGS[currentSongIndex];
+        bgMusic.load();
+        if (isPlaying) {
+            playMusic();
+        }
+    }
+
+    if (nextSongBtn) {
+        nextSongBtn.addEventListener('click', () => changeSong('next'));
+    }
+    if (prevSongBtn) {
+        prevSongBtn.addEventListener('click', () => changeSong('prev'));
+    }
 
     // --- 5. SCROLL ANIMATIONS (INTERSECTION OBSERVER) ---
     function initAnimations() {
         const observerOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.1,
+            rootMargin: "0px 0px 50px 0px"
         };
 
         const observer = new IntersectionObserver((entries) => {
